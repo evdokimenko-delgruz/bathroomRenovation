@@ -723,3 +723,11 @@ p {
     text-align: center;
   }
 }
+
+.company-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 12px;
+}

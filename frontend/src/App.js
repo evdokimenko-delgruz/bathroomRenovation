@@ -17,13 +17,13 @@ function App() {
           <Header />
           <main>
             <Routes>
-              {/*<Route path="/" element={<Home />} />*/}
-              {/*<Route path="/about" element={<About />} />*/}
-              {/*<Route path="/services" element={<Services />} />*/}
-              {/*<Route path="/calculator" element={<Calculator />} />*/}
-              {/*<Route path="/gallery" element={<Gallery />} />*/}
-              {/*<Route path="/blog" element={<Blog />} />*/}
-              {/*<Route path="/contacts" element={<Contacts />} />*/}
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/calculator" element={<Calculator />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contacts" element={<Contacts />} />
             </Routes>
           </main>
           <Footer />
