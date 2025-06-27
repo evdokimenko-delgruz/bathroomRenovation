@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
 
@@ -45,6 +45,23 @@ const advantages = advantagesText.split('\n\n').filter(Boolean).map((item, index
 
 
 const Home = () => {
+
+
+    useEffect(() => {
+        // Получение слогана
+        fetch('http://localhost:5000/api/content/slogan')
+            .then(res => res.json())
+            .then(data => setSloganText(data))
+            .catch(err => console.error('Error fetching slogan:', err));
+
+        // Получение информации о компании
+        fetch('http://localhost:5000/api/content/company_info')
+            .then(res => res.json())
+            .then(data => setCompanyInfo(data.fullText)) // Получаем fullText из объекта data
+            .catch(err => console.error('Error fetching company info:', err));
+
+    }, []);
+
     return (
         <div className="home-page">
             <section className="hero">

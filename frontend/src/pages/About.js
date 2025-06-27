@@ -4,7 +4,7 @@ import '../index.css';
 // Импорт изображений для команды и выполненных работ (оставляем те же пути)
 import teamMember from '../assets/images/1.KvgTTba4hhEF5TwbS3FEshLvhBet7CQYHeaEE6Pkjhul.oTyzWHufZrXRz4a-X5QFuiK8r8IjH8cjQGZjgk7x0Vo.webp';
 import completedWork1 from '../assets/images/2.jpg';
-import completedWork2 from '../assets/images/kak-ehkonomno-obnovit-vannuyu-komnatu.jpg';
+import completedWork2 from '../assets/images/portfolio-1.jpg';
 import completedWork3 from '../assets/images/075E5437-320E-49D1-9562-595B82E33399-scaled.jpeg';
 import completedWork4 from '../assets/images/658d67396ca4f.jpg';
 import completedWork5 from '../assets/images/20220728-3.jpg';
@@ -100,13 +100,11 @@ const About = () => {
                 <section className="company-info-section">
                     <h2>Наша компания</h2>
                     {companyInfo.split('\n\n').map((paragraph, index) => (
-                        <div key={index} className="company-paragraph-block">
+                        <div key={index} className="company-block">
                             <p>{paragraph.trim()}</p>
                             <img
-                                src={
-                                    [completedWork1, completedWork2, completedWork3, completedWork4, completedWork5][index % 5]
-                                }
-                                alt={`completed work ${index + 1}`}
+                                src={[completedWork1, completedWork2, completedWork3, completedWork4, completedWork5][index % 5]}
+                                alt={`company-pic-${index}`}
                                 className="company-image"
                             />
                         </div>
