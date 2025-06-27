@@ -1,0 +1,725 @@
+/* Общие стили */
+:root {
+  --primary-color: #007bff; /* Синий */
+  --secondary-color: #6c757d; /* Серый */
+  --accent-color: #28a745; /* Зеленый для кнопок/акцентов */
+  --text-color: #343a40; /* Темный текст */
+  --light-bg: #f8f9fa; /* Светлый фон */
+  --white: #ffffff;
+  --dark: #212529;
+  --border-color: #dee2e6;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Header */
+.header {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px; /* Регулируйте размер логотипа */
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-left: 25px;
+}
+
+.nav ul li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active { /* Для активной ссылки, если используется */
+  color: var(--primary-color);
+}
+
+
+/* Home Page */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(0.6); /* Darken image for better text readability */
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: var(--white); /* Ensure text is white */
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: var(--white); /* Ensure text is white */
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.advantage-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.advantage-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+
+/* About Page */
+.about-page h1, .about-page h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.company-info-section, .team-section, .completed-works-section, .testimonials-section {
+  margin-bottom: 60px;
+}
+
+.company-info-section p {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.team-member {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--primary-color);
+}
+
+.completed-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.work-item {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center;
+}
+
+.work-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.work-item h3 {
+  margin: 15px 15px 10px;
+  font-size: 1.3em;
+  color: var(--primary-color);
+}
+
+.work-item p {
+  padding: 0 15px 20px;
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-style: italic;
+  text-align: center;
+}
+
+.testimonial-text {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-style: normal;
+}
+
+
+/* Services Page */
+.services-page h1 {
+  margin-bottom: 30px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-item {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  text-align: center;
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-item h3 {
+  margin: 20px 15px 10px;
+  font-size: 1.4em;
+  color: var(--primary-color);
+}
+
+.service-item p {
+  padding: 0 15px;
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+
+.service-price {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+
+/* Calculator Page */
+.calculator-page h1 {
+  margin-bottom: 30px;
+}
+
+.calculator-page p {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+/* Add some basic form styling */
+.calculator-form {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.form-group input[type="number"],
+.form-group select,
+.form-group input[type="text"],
+.form-group textarea {
+  width: calc(100% - 20px); /* Adjust for padding */
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-group .checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.result-section {
+  margin-top: 50px;
+  text-align: center;
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-section h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.result-section p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+/* Gallery Page */
+.gallery-page h1 {
+  margin-bottom: 30px;
+}
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-buttons button {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+  background-color: var(--primary-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  transform: translateY(0);
+}
+
+.gallery-item-overlay p {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+
+/* Blog Page */
+.blog-page h1, .blog-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.articles-section, .tips-section {
+  margin-bottom: 60px;
+}
+
+.blog-article, .blog-tip {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.blog-article h3, .blog-tip h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: left; /* Переопределяем для заголовков статей/советов */
+}
+
+.blog-article p, .blog-tip p {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+
+/* Contacts Page */
+.contacts-page h1 {
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-details p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.contact-details a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-form-section {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-group label {
+  text-align: left; /* Align labels left */
+}
+
+.map-section {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.map-section h2 {
+  margin-bottom: 20px;
+}
+
+.map-note {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 40px 0 20px;
+  font-size: 0.95em;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  text-align: left;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  color: var(--white);
+  text-align: left;
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  color: var(--white);
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .advantage-grid,
+  .team-grid,
+  .completed-works-grid,
+  .testimonials-grid,
+  .services-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section h3, .footer-section p {
+    text-align: center;
+  }
+}
